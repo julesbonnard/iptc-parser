@@ -4,6 +4,7 @@
   "description": "Micro-service that returns IPTC from an uploaded image",
   "main": "index.js",
   "scripts": {
+  	"start": "node src/app.js",
     "dev": "DEBUG=iptc-parser* node src/app.js",
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +15,7 @@
       "git add"
     ]
   },
-  "author": "Jules Bonnard",
+  "author": "Jules Bonnard <julesbonnard@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "husky": "^0.13.4",
