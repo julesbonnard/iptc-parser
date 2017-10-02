@@ -24,17 +24,20 @@ const fileFilter = (req, file, cb) => {
   cb("Error: File upload only supports the following filetypes - " + filetypes);
 };
 
-const fileLimits = { fileSize: "15mb" };
+const fileLimits = {
+  fileSize: "15MB",
+  files: 10
+};
 
 const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
-  filelimits: fileLimits
+  limits: fileLimits
 });
 
 const iptc = require("node-iptc");
 
-router.post("/", upload.array("files", 10), (req, res, next) => {
+router.post("/", upload.any(), (req, res, next) => {
   if (!req.files || !Array.isArray(req.files))
     return next("Error while uploading files");
 

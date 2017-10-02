@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const iptcParser = require("./iptc-parser");
+
+app.use(cors());
 
 app.use("/", iptcParser);
 
