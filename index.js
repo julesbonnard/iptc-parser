@@ -36,10 +36,10 @@ function handler(event, context) {
           const buffer = Buffer.concat(this.buff);
           const fileParsed = {
             name: filename,
-            mimetype: fileData.mimetype,
+            mimetype: mimetype,
             iptc: iptcParser(buffer)
           };
-          results.push(iptc);
+          results.push(fileParsed);
         });
     })
     .on("field", (fieldname, val) =>

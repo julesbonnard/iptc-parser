@@ -4,24 +4,10 @@
   "description": "Micro-service that returns IPTC from an uploaded image",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "DEBUG=iptc-parser* node index.js",
-    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "author": "Jules Bonnard <julesbonnard@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "husky": "^0.13.4",
-    "lint-staged": "^4.0.0",
-    "prettier": "^1.4.4"
-  },
   "dependencies": {
     "busboy": "^0.2.14",
     "node-iptc": "^1.0.4"
