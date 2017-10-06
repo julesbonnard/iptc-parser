@@ -4,13 +4,13 @@
   "description": "Micro-service that returns IPTC from an uploaded image",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "DEBUG=iptc-parser* node src/app.js",
+    "start": "node index.js",
+    "dev": "DEBUG=iptc-parser* node index.js",
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "src/*.js": [
+    "*.js": [
       "prettier --write",
       "git add"
     ]
